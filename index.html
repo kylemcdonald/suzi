@@ -1,11 +1,15 @@
-<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 <script>
   var socket = io.connect('http://localhost');
-  socket.on('time', function (data) {
-    console.log(data);
+  var bg = false;
+  socket.on('ping', function (data) {
+    document.bgColor = bg ? "#fff" : "#000";
+    bg = !bg;
   });
   socket.on('log', function (data) {
     console.log(data);
   });
 </script>
+<body>
 <h1 style="font-family: sans-serif">s(ockets)uzi.</h1>
+</body>

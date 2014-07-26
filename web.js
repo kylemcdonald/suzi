@@ -12,8 +12,8 @@ io.on('connection', function (socket) {
   socket.emit('log', { hello: 'connected' });
 });
 
-function sendTime() {
-    io.sockets.emit('time', { time: new Date().toJSON() });
+function sendPing() {
+    io.sockets.emit('ping', { time: new Date().toJSON() });
 }
 
-setInterval(sendTime, 100);
+setInterval(sendPing, 100);
