@@ -1,0 +1,15 @@
+{
+  "name": "suzi",
+  "version": "0.0.0",
+  "description": "socket.io uzi",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kylemcdonald",
+  "license": "MIT",
+  "dependencies": {
+    "logfmt": "^1.1.2",
+    "express": "^4.7.0"
+  }
+}
