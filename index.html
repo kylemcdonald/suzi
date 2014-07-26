@@ -26,10 +26,13 @@
       var ws = new WebSocket(host);
       var bg = true;
       ws.onmessage = function (event) {
-        console.log(event.data);
+        // console.log(event.data);
         document.querySelector('h1').className = bg ? "white" : "black";
         bg = !bg;
       };
+      setInterval(function() {
+        ws.send('ping');
+      }, 100);
     </script>
   </head>
   <body>
