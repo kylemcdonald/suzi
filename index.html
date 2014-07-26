@@ -1,34 +1,35 @@
+
 <html>
   <head>
     <style>
       body {
-        font-family: "Helvetica Neue", helvetica, arial;
+        font-family: sans-serif;
         padding: 15px;
       }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      h1 {
+        display: inline;
       }
-
-      ul li {
-        line-height: 1.4;
+      .white {
+        background-color: white;
+        color: black;
+      }
+      .black {
+        background-color: black;
+        color: white;
       }
     </style>
-
     <script>
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
+      var bg = true;
       ws.onmessage = function (event) {
-        var li = document.createElement('li');
-        li.innerHTML = JSON.parse(event.data);
-        document.querySelector('#pings').appendChild(li);
+        console.log(event.data);
+        document.querySelector('h1').className = bg ? "white" : "black";
+        bg = !bg;
       };
     </script>
   </head>
   <body>
-    <h1>Pings</h1>
-    <ul id='pings'></ul>
+    <h1>s(ockets)uzi</h1>
   </body>
 </html>
